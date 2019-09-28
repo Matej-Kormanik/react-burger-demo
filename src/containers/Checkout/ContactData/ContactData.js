@@ -167,18 +167,15 @@ class ContactData extends Component {
         let form = (
         <form onSubmit={this.orderHandler}>
             {formElementArray.map(formElement => (
-                <Input
-                    key={formElement.id}
-                    elementType={formElement.config.elementType}
-                    elementConfig={formElement.config.elementConfig}
-                    value={formElement.config.value}
-                    changed={(event) => this.inputChangedHandler(event, formElement.id)}
-                    invalid={!formElement.config.valid}
-                    shouldValidate={formElement.config.validation}
-                    touched={formElement.config.touched}/>
+            <Input key={formElement.id}
+                elementType={formElement.config.elementType}
+                elementConfig={formElement.config.elementConfig}
+                value={formElement.config.value}
+                changed={(event) => this.inputChangedHandler(event, formElement.id)}
+                invalid={!formElement.config.valid}
+                shouldValidate={formElement.config.validation}
+                touched={formElement.config.touched}/>
             ))}
-
-
             <Button btnType="Success" disabled={!this.state.formIsValid}>Order</Button>
         </form>);
 
